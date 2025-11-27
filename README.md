@@ -1,2 +1,2 @@
 # Glance
-Glance:AcceleratingDiffusionModelswith1Sample
+Glance: Acceleratin gDiffusion Models with 1 Sample
