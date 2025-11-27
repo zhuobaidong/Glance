@@ -101,7 +101,42 @@
     @keyframes lbSpin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
-    }</style></head>
+    }</style>
+<style>
+  /* —— 你 LaTeX 中的颜色 —— */
+  :root {
+    --dsf-orange: #F26A21;
+    --dsf-pink:   #F57C8E;
+    --dsf-purple: #A84D96;
+  }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .title-icon {
+    height: 32px;
+  }
+
+  .fancy-title {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  /* —— 模拟 LaTeX 的渐变文字 —— */
+  .c1 { color: var(--dsf-pink); }
+  .c2 { color: var(--dsf-pink); }
+  .c3 { color: #f57c8ecc; }   /* pink 80% */
+  .c4 { color: #f57c8e99; }   /* pink 60% */
+  .c5 { color: #f57c8e66; }   /* pink 40% */
+  .c6 { color: #f57c8e33; }   /* pink 20% */
+  .c7 { color: var(--dsf-purple); }
+</style>
+</head>
 <!-- Head End -->
 
 <!-- Body Start -->
@@ -113,9 +148,22 @@
       <div class="container is-max-desktop is-max-mobile">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title" style="font-size: 30pt;">
+            <!-- <h1 class="title is-1 publication-title" style="font-size: 30pt;">
               Glance: Accelerating Diffusion Models with 1 Sample
-            </h1>
+            </h1> -->
+            <div class="title-wrapper">
+              <img src="./static/images/icon.png" class="title-icon" alt="icon">
+              <div class="fancy-title">
+                Glance: Accelerating Diffusion Models with
+                <span class="c1">1</span>
+                <span class="c2">S</span>
+                <span class="c3">a</span>
+                <span class="c4">m</span>
+                <span class="c5">p</span>
+                <span class="c6">l</span>
+                <span class="c7">e</span>
+              </div>
+            </div>
 
             <!-- <div class="is-size-4 publication-authors">
               <span class="eql-cntrb">
