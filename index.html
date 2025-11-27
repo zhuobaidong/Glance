@@ -148,7 +148,7 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Central South University,&nbsp;&nbsp;<sup>2</sup>University of Electronic Science and Technology of China<br><sup>3</sup>Peng Cheng Laboratory,&nbsp;&nbsp;<sup>4</sup>Nanjing University,&nbsp;&nbsp;<sup>5</sup>Microsoft</span>
+              <span class="author-block"><sup>1</sup>WuHan University,&nbsp;&nbsp;<sup>2</sup>University of Electronic Science and Technology of China<br><sup>3</sup>Peng Cheng Laboratory,&nbsp;&nbsp;<sup>4</sup>Nanjing University,&nbsp;&nbsp;<sup>5</sup>Microsoft</span>
               <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution,&nbsp;<sup>&dagger;</sup>Corresponding author</small></span>
             </div>
 
@@ -250,9 +250,11 @@
     <div class="hero-body">
       <figure class="image-container">
         <div class="zoomcaption">🔍 Click to zoom in</div>
-        <img class="clickable-image" src="./static/images/figure1.png">
-        <figcaption><br><b>Figure 1: A one-minute sanity check shatters the illusion <em>of spatial reasoning in MLLMs</em>.</b> 
-          Red arrows indicate objects and multiple reasoning chains are provided to capture diverse yet valid solution strategies.
+        <img class="clickable-image" src="./static/images/Contranst.png">
+        <figcaption><br><b>Figure 1: Comparison of data usage and training time.</em>.</b> 
+          Glance achieves comparable generation quality with only <b>1 training samples and within 1 GPU-hour</b>, 
+          demonstrating extreme data and compute efficiency. Note that the x-axis is in logarithmic scale, and values 
+          equal to zero are therefore not representable.
         </figcaption>
       </figure>
     </div>
@@ -286,10 +288,11 @@
 <section class="section hero is-small">
 <div class="container is-max-desktop is-max-mobile">
 <figure class="image-container">
-  <div class="zoomcaption">Dataset Overview</div>
-  <img class="static-image" src="./static/images/dataset.png">
-  <figcaption><br> <b>Figure 2: Examples from MVPBench across four major categories.</b> 
-    Each example includes an initial scene followed by multiple reasoning steps. Target objects are marked with red arrows and labeled with letters to reduce textual bias.
+  <div class="zoomcaption">Comparison Overview</div>
+  <img class="static-image" src="./static/images/method.png">
+  <figcaption><br> <b>Figure 2: Comparison of distill and accelerate strategies.</b> 
+    Prior distillation pipelines rely on large training sets and costly retraining. \ours requires only one training sample to obtain Slow-LoRA and Fast-LoRA, 
+    providing plug-and-play acceleration of the base generation model.
   </figcaption>
 </figure>
 </div>
