@@ -103,13 +103,10 @@
         100% { transform: rotate(360deg); }
     }</style>
 <style>
-  /* —— 你 LaTeX 中的颜色 —— */
   :root {
-    --dsf-orange: #F26A21;
-    --dsf-pink:   #F57C8E;
-    --dsf-purple: #A84D96;
+  --dsf-pink:   #F57C8E;  /* 左侧粉色 */
+  --dsf-purple: #A84D96;  /* 右侧紫色 */
   }
-
   .title-wrapper {
     display: flex;
     align-items: center;
@@ -127,13 +124,12 @@
     font-weight: 700;
   }
 
-  /* —— 模拟 LaTeX 的渐变文字 —— */
   .c1 { color: var(--dsf-pink); }
   .c2 { color: var(--dsf-pink); }
-  .c3 { color: #f57c8ecc; }   /* pink 80% */
-  .c4 { color: #f57c8e99; }   /* pink 60% */
-  .c5 { color: #f57c8e66; }   /* pink 40% */
-  .c6 { color: #f57c8e33; }   /* pink 20% */
+  .c3 { color: #E96F8D; }  /* 20% toward purple */
+  .c4 { color: #DC638D; }  /* 40% toward purple */
+  .c5 { color: #CE578E; }  /* 60% toward purple */
+  .c6 { color: #C14C90; }  /* 80% toward purple */
   .c7 { color: var(--dsf-purple); }
 </style>
 </head>
@@ -148,34 +144,20 @@
       <div class="container is-max-desktop is-max-mobile">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- <h1 class="title is-1 publication-title" style="font-size: 30pt;">
-              Glance: Accelerating Diffusion Models with 1 Sample
-            </h1> -->
-            <!-- <div class="title-wrapper">
-              <img src="./static/images/icon.png" class="title-icon" alt="icon">
-              <div class="fancy-title">
-                Glance: Accelerating Diffusion Models with
-                <span class="c1">1</span>
-                <span class="c2">S</span>
-                <span class="c3">a</span>
-                <span class="c4">m</span>
-                <span class="c5">p</span>
-                <span class="c6">l</span>
-                <span class="c7">e</span>
-              </div>
-            </div> -->
             <h1 class="title is-1 publication-title"
                 style="font-size: 30pt; line-height: 1.2; display: flex; align-items: center; gap: 0.3em; flex-wrap: nowrap;">
               
               <!-- ICON 放大且保证完全在一行 -->
               <img src="./static/images/icon.png"
-                   style="height: 1.3em; flex-shrink: 0; margin-top: -0.1em;"
+                   style="height: 1.5em; flex-shrink: 0; margin-top: -0.1em;"
                    alt="icon">
             
               <!-- 标题文本部分 -->
               <span style="white-space: nowrap;">
-                Glance: Accelerating Diffusion Models with
-                <span class="c1">1</span><span class="c2">S</span><span class="c3">a</span><span class="c4">m</span><span class="c5">p</span><span class="c6">l</span><span class="c7">e</span>
+                <span class="c2">G</span><span class="c3">l</span><span class="c4">a</span><span class="c5">n</span><span class="c6">c</span><span class="c7">e</span>
+                : Accelerating Diffusion Models with
+                <span class="c1">1</span>
+                <span class="c2">S</span><span class="c3">a</span><span class="c4">m</span><span class="c5">p</span><span class="c6">l</span><span class="c7">e</span>
               </span>
             
             </h1>
