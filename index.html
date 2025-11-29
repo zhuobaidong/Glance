@@ -114,6 +114,11 @@
     margin-top: 30px;
     margin-bottom: 10px;
   }
+  .abstract-title {
+  color: var(--dsf-pink); /* 使用你定义的粉色变量 */
+  font-weight: bold;       /* 加粗字体 */
+  font-size: 1.2rem;
+  }
 
   .title-icon {
     height: 32px;
@@ -131,6 +136,83 @@
   .c5 { color: #CE578E; }  /* 60% toward purple */
   .c6 { color: #C14C90; }  /* 80% toward purple */
   .c7 { color: var(--dsf-purple); }
+</style>
+
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    tr, td {
+      border: none;
+      padding: 8px;
+      text-align: left;
+      font-size: 13px;
+    }
+    tr:first-child td:first-child {
+      border-top: 2px solid black !important;
+    }
+    tr:last-child {
+      border-bottom: 2px solid black !important;
+    }
+    .thick-top-border { border-top: 2px solid black !important; }
+    .no-top-border { border-top: none !important; }
+    .circle-solid::before { content: "\25CF"; font-size: 20px; }
+    .circle-shallow::before { content: "\25CB"; font-size: 20px; }
+    .table-head-size { font-size: 17px; }
+    .table-row-head-size { font-size: 14px; }
+    .image-row { display: none !important; }
+    .image-cell { width: 91.4% !important; }
+    .dark-line { border-bottom: 1px solid black; }
+
+    .marquee {
+      overflow: hidden;
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      padding: 6px 0 0 0;
+      position: relative;
+    }
+
+    .marquee-wrapper {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .marquee-inner {
+      display: flex;
+      width: max-content;
+      animation: scroll-loop 260s linear infinite;
+    }
+
+    .marquee-inner img {
+      height: 160px;
+      margin: 0 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .marquee-inner img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll-loop {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .hr-divider {
+  border: none;
+  border-top: 1px solid #ccc; /* light grey line */
+  margin: 2rem 0 -3rem 0;          /* vertical spacing */
+}
+
+.hr-tight {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0.2rem -10rem -10rem -10rem; /* tighter spacing: top, right, bottom, left */
+}
+
 </style>
 </head>
 <!-- Head End -->
@@ -200,7 +282,7 @@
             &nbsp;
 
             <!-- Logos -->
-            <div class="logos">
+            <!-- <div class="logos">
               <img src="static/images/csu.jpg" alt="csu Logo" class="csu-logo" width="100">
               &nbsp;
               <img src="static/images/dianzi.png" alt="dianzi Logo" class="dianzi-logo" width="95">
@@ -210,7 +292,7 @@
               <img src="static/images/nanjing.png" alt="nanjing Logo" class="nanjing" width="72">
               &nbsp;
               <img src="static/images/microsoft.jpg" alt="microsoft Logo" class="microsoft" width="150">
-            </div>
+            </div> -->
 
             <div class="column has-text-centered">
             <div class="publication-links">
@@ -230,7 +312,7 @@
 
             <!-- Github link -->
             <span class="link-block">
-              <a href="https://github.com/CSU-JPG/MVPBench" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://github.com/zhuobaidong/Glance" class="external-link button is-normal is-rounded is-dark">
               <span class="icon">
                   <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
               </span>
@@ -246,7 +328,7 @@
                 <span class="icon">
                   <img src="static/images/huggingface.png" alt="Hugging Face" style="height: 1em; vertical-align: middle;">
                 </span>
-                <span>Dataset</span>
+                <span>Model</span>
               </a>
             </span>
 
@@ -274,20 +356,106 @@
   </div>
 </section>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="subtitle has-text-centered" style="margin-top: 10pt; font-size: 20pt; color: #20b30c; font-weight: 700;">
-      ▶️ Overview Video
+<!-- Marquee Section -->
+<section class="hero is-light is-small">
+  <div class="container is-fluid">
+    <div class="marquee-wrapper">
+      <div style="text-align: center; font-size: 1.2rem; font-weight: 600; margin-bottom: 14px;">
+        <i>Qwen-Image or Glance</i> — Can you spot which model generated each image? Click to find out!
       </div>
-      <video poster="" id="tree" autoplay="" controls="" muted="" loop="" height="100%">
-        <source src="static/videos/dongtu.mp4" type="video/mp4">
-      </video>
+      
+      
+      <div class="marquee">
+        <div class="marquee-inner" id="marquee"></div>
+      </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-background"></div>
+    <div class="modal-content" style="max-width: 290px; margin: auto;">
+      <div class="box p-3" style="padding: 1rem !important;">
+        <figure class="image" style="width: 256px; height: 256px; margin: auto;">
+          <img id="modalImage" src="" alt="" style="object-fit: cover; width: 100%; height: 100%;">
+        </figure>
+        <div class="content mt-3" style="font-size: 0.9rem;">
+          <p id="modalDescription" style="font-size: 0.95rem;"></p>
+        </div>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
 </section>
-<!-- End teaser video -->
+
+<!-- Load imageData -->
+<script src="static/js/imageData.js"></script>
+
+<!-- Infinite Scroll Script -->
+<script>
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("marquee");
+  container.classList.add("marquee-inner");
+
+   // 🔀 Shuffle once before rendering
+  shuffleArray(imageData);
+
+  const numRepeats = 8; // Repeat the image strip 3 times to ensure seamless loop
+
+  for (let r = 0; r < numRepeats; r++) {
+    imageData.forEach((img, idx) => {
+      const el = document.createElement("img");
+      el.src = img.src;
+      el.alt = img.variant;
+      el.loading = "lazy";
+      el.onclick = () => openModalFromData(idx);
+      container.appendChild(el);
+    });
+  }
+
+  document.querySelector(".modal-close").onclick =
+  document.querySelector(".modal-background").onclick =
+    () => document.getElementById("imageModal").classList.remove("is-active");
+});
+
+
+// ✨ Generate short, punchy feedback messages
+function generateExcitingMessage({ ratio, operator, variant }) {
+    if (operator === "qwen") {
+      return "❌ Nope!<br>Qwen-Image";
+    }
+
+    if (operator === "glance") {
+      return `✅ Correct!<br>Our Glance`;
+    }
+  }
+
+function openModalFromData(index) {
+  const data = imageData[index];
+
+  // ✅ This is what makes the image appear!
+  document.getElementById('modalImage').src = data.src;
+
+  // const msg = `Correct! This came from a grafted model with ${data.ratio} of its ${data.operator} layers replaced by ${data.variant}.`;
+  const msg = generateExcitingMessage(data); 
+  // document.getElementById('modalDescription').textContent = msg;
+  document.getElementById('modalDescription').innerHTML = msg; // Use innerHTML instead of textContent
+
+  document.getElementById("imageModal").classList.add("is-active");
+}
+
+</script>
+
+</section>
 
 <!-- Teaser image-->
 <section class="hero teaser">
@@ -295,7 +463,7 @@
     <div class="hero-body">
       <figure class="image-container">
         <div class="zoomcaption">🔍 Click to zoom in</div>
-        <img class="clickable-image" src="./static/images/Contranst.png">
+        <img class="clickable-image" src="./static/images/Contranst.png" style="width:70%; max-width:800px;">
         <figcaption><br><b>Figure 1: Comparison of data usage and training time.</em>.</b> 
           Glance achieves comparable generation quality with only <b>1 training samples and within 1 GPU-hour</b>, 
           demonstrating extreme data and compute efficiency. Note that the x-axis is in logarithmic scale, and values 
@@ -313,7 +481,7 @@
   <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
   <div class="content has-text-justified">
-    <strong>Abstract:</strong>
+    <span class="abstract-title">Abstract:</span>
     Diffusion models have achieved remarkable success in image generation, yet their deployment remains constrained by the heavy computational cost and the need 
     for numerous inference steps. Previous efforts on fewer-step distillation attempt to skip redundant steps by training compact student models, yet they often 
     suffer from heavy retraining costs and degraded generalization. In this work, we take a different perspective: we accelerate smartly, not evenly, applying 
@@ -343,19 +511,6 @@
 </div>
 </section>
 
-<!-- Slideshow container -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop is-max-mobile">
-  <link rel="stylesheet" href="./static/css/slider.css">
-  <div class="zoomcaption">◀️ ▶️👆 Click to Navigate Qualitative Results</div>
-  <div class="slider-container">
-    <button class="slider-button left-button">❮</button>
-    <img id="slider-image" src="static/images/relevance.png">
-    <button class="slider-button right-button">❯</button>
-  </div>
-  </div>
-</section>
-
 <!-- Image with caption -->
 <section class="section hero is-small">
 <div class="container is-max-desktop is-max-mobile">
@@ -365,46 +520,6 @@
 </figure>
 </div>
 </section>
-
-<!-- <section class="section hero is-small">
-  <div class="container is-max-desktop is-max-mobile">
-  <figure class="image-container">
-    <div class="zoomcaption">Quantitative Results (Image)</div>
-    <img class="static-image-small" src="./Omni-RGPT_ Unifying Image and Video Region-level Understanding via Token Marks_files/vcr_comparison.png">
-  </figure>
-  </div>
-  </section> -->
-
-
-
-<!-- <section class="section hero is-small">
-  <div class="container is-max-desktop is-max-mobile">
-  <figure class="row-image-container">
-    <div class="zoomcaption">RegVID-300k Dataset</div>
-    <figcaption>We introduce a large-scale, diverse, and fine-grained <b>Reg</b>ion-level <b>Vi</b>deo <b>I</b>nstruction <b>D</b>ataset (<b>RegVID-300k</b>). 
-    The dataset includes 98k unique videos, with 214k regions curated from 10 public video datasets and 294k region-level instruction samples. 
-    </figcaption><br>
-    <img class="static-image" src="./Omni-RGPT_ Unifying Image and Video Region-level Understanding via Token Marks_files/data-vis.jpg">
-  </figure>
-  </div>
-</section> -->
-
-<!-- Acknowledgements Section -->
-<!-- <section class="section hero is-light">
-  <div class="container is-max-desktop is-max-mobile">
-    <div class="columns is-centered">
-      <div class="column is-three-quarters">
-        <div class="content has-text-justified">
-          <h2 class="title is-4 has-text-centered">Acknowledgements</h2>
-          <p>
-            We would like to thank Qiushan Guo for assistance in setting up the project. 
-            We also appreciate the NVIDIA VILA team for the efforts in developing a robust framework that greatly facilitated our research.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- BibTeX Citation Section -->
 <section class="section hero is-light" style="padding-top: 1rem; padding-bottom: 1rem;">
