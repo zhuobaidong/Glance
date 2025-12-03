@@ -1,2 +1,2 @@
-# Glance
-Glance: Acceleratin gDiffusion Models with 1 Sample
+# Official Codebase
+https://github.com/CSU-JPG/Glance
